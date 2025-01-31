@@ -4,22 +4,11 @@ export default function HeroSection() {
     const introQualities = ["Front-End Developer", "5+ Years Experience", "3+ Well Done Projects", "20+ Skills"]
 
     return (
-        <section className="flex pt-20 w-full h-[70vh] md:h-screen relative">
-            <div className="absolute right-0 bottom-0 pt-20 flex items-end justify-center md:justify-end
-            h-full w-full md:w-2/3 lg:w-1/2 2xl:w-[50vw]">
-                <Image
-                src="/images/personal-photo.png"
-                alt="oleh skakun photo"
-                width={750}
-                height={920}
-                className="max-h-full h-auto w-auto md:w-full select-none"
-                style={{
-                    WebkitMaskImage: "linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%)",
-                    maskImage: "linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%)"
-                }}
-                />
-            </div>
-
+        <section className="flex pt-20 w-full h-[70vh] md:h-screen relative
+        bg-no-repeat bg-[bottom_center] md:bg-right-bottom bg-contain"
+        style={{
+            backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,0) 20%, rgba(255,255,255,1)), url('/images/personal-photo.png')"
+        }}>
             <div className="w-full md:w-7/12 xl:w-6/12 h-fit md:h-[80%] xl:h-full flex flex-col gap-y-10 items-center justify-center mt-auto pb-14">
                 <h1 
                 data-aos="fade-up"

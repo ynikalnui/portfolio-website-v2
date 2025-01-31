@@ -100,7 +100,7 @@ export default function ProjectModal() {
                                 </div>
                             </div>
 
-                            <div className="w-full flex flex-col items-center gap-y-2 overflow-clip">
+                            <div className="w-full flex flex-col items-center gap-y-2">
                                 <p 
                                 data-aos="fade-down"
                                 data-aos-delay="300"
@@ -108,12 +108,14 @@ export default function ProjectModal() {
                                     Description
                                 </p>
 
-                                <div 
-                                data-aos="slide-right"
-                                data-aos-delay="300"
-                                data-aos-duration="1000"
-                                className="w-full bg-black h-[3px]"
-                                />
+                                <div className="overflow-hidden w-full">
+                                    <div 
+                                    data-aos="slide-right"
+                                    data-aos-delay="300"
+                                    data-aos-duration="1000"
+                                    className="w-full bg-black h-[3px]"
+                                    />
+                                </div>
 
                                 <p 
                                 data-aos="fade-up"

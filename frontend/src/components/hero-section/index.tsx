@@ -6,7 +6,7 @@ export default function HeroSection() {
     return (
         <section className="flex pt-20 w-full h-[70vh] md:h-screen relative">
             <div className="absolute right-0 bottom-0 pt-20 flex items-end justify-center md:justify-end
-            h-full w-full md:w-2/3 lg:w-1/2 xl:w-[50vw]">
+            h-full w-full md:w-2/3 lg:w-1/2 2xl:w-[50vw]">
                 <Image
                 src="/images/personal-photo.png"
                 alt="oleh skakun photo"

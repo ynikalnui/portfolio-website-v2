@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 export default function HeroSection() {
     const introQualities = ["Front-End Developer", "5+ Years Experience", "3+ Well Done Projects", "20+ Skills"]
 

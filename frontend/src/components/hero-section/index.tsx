@@ -1,12 +1,16 @@
+import Image from "next/image"
+
 export default function HeroSection() {
     const introQualities = ["Front-End Developer", "5+ Years Experience", "3+ Well Done Projects", "20+ Skills"]
 
     return (
         <section className="flex pt-20 w-full h-[70vh] md:h-screen relative">
             <div className="absolute right-0 bottom-0 pt-20 h-full w-full md:w-auto flex items-end justify-center md:justify-end">
-                <img 
+                <img
                 src="/images/personal-photo.png"
                 alt="oleh skakun photo"
+                width={705}
+                height={910}
                 className="max-h-full w-auto md:w-9/12 lg:w-11/12 xl:w-full select-none"
                 style={{
                     WebkitMaskImage: "linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%)",

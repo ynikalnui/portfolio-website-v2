@@ -1,40 +1,22 @@
 'use client'
 
-import { useState, useEffect } from "react";
 import useNavMenuStore from "@/store/useNavMenuStore";
 import DesktopNav from "./DesktopNav";
 import OpenMenuButton from "./utils/OpenMenuButton";
+import { Link } from "react-scroll";
 
 export default function Header() {
-    const [scrolled, setScrolled] = useState(false);
     const isOpened = useNavMenuStore((state) => state.isOpened);
 
-    useEffect(() => {
-        if (window.scrollY > 30) {
-            setScrolled(true);
-        }
-
-        const handleScroll = () => {
-            if (window.scrollY > 30) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
     return (
-        <div
-            className={`fixed z-50 top-0 left-0 right-0 mx-auto w-full lg:max-w-[1600px] py-4 px-4 flex justify-between
-            ${scrolled && !isOpened ? 'bg-white/60 backdrop-blur-sm' : 'delay-300 bg-transparent'}`}
-        >
-            <div className="flex gap-x-1 items-center">
+        <div className={`fixed z-50 top-0 left-0 right-0 mx-auto w-full py-4 px-4 flex justify-between
+        ${isOpened ? 'delay-300 bg-transparent' : 'border-b-2 border-black bg-white/60 backdrop-blur-sm'}`}>
+
+            <Link 
+            to="hero"
+            smooth={true}
+            duration={500}
+            className="flex gap-x-1 items-center cursor-pointer select-none">
                 <div
                     className={`transition-all border-[3px] rounded-full size-10 flex justify-center items-center font-bold
                     ${isOpened ? 'border-white text-white delay-200' : 'border-black text-black'}`}
@@ -54,7 +36,7 @@ export default function Header() {
                         FRONT-END DEVELOPER
                     </p>
                 </div>
-            </div>
+            </Link>
 
             <DesktopNav />
 

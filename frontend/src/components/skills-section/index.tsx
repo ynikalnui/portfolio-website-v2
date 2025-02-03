@@ -19,7 +19,7 @@ export default function SkillsSection() {
       ];
 
     return (
-        <section className="section-container">
+        <section id="skills" className="section-container">
             <h2 
             data-aos="fade-up"
             className="section-title">

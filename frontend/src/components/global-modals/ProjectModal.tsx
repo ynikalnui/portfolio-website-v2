@@ -126,7 +126,10 @@ export default function ProjectModal() {
                             </div>
 
                             <ul className="w-full flex flex-col gap-y-5">
-                                <li data-aos="fade-up">
+                                <li 
+                                data-aos-delay="300"
+                                data-aos="fade-up"
+                                >
                                     <Image 
                                     src="/images/project.png"
                                     alt="project image"
@@ -135,16 +138,10 @@ export default function ProjectModal() {
                                     className="w-full"
                                     />
                                 </li>
-                                <li data-aos="fade-up">
-                                    <Image 
-                                    src="/images/project.png"
-                                    alt="project image"
-                                    width={980}
-                                    height={510}
-                                    className="w-full"
-                                    />
-                                </li>
-                                <li data-aos="fade-up">
+                                <li 
+                                data-aos-delay="300"
+                                data-aos="fade-up"
+                                >
                                     <Image 
                                     src="/images/project.png"
                                     alt="project image"

@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import { AOSInit } from "@/lib/aos";
 import Header from "@/components/header";
 import GlobalModals from "@/components/global-modals";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,6 +17,8 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
       <body>
         <Header />
         {children}
+        <Footer />
+        
         <GlobalModals />
       </body>
     </html>

@@ -8,7 +8,7 @@ export default function ProjectsSection() {
     ];
 
     return (
-        <section className="section-container h-screen">
+        <section id="projects" className="section-container">
             <h2 data-aos="fade-up" className="section-title">
                 Projects
             </h2>

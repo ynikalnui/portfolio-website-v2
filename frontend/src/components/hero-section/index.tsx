@@ -2,7 +2,7 @@ export default function HeroSection() {
     const introQualities = ["Front-End Developer", "5+ Years Experience", "3+ Well Done Projects", "20+ Skills"]
 
     return (
-        <section className="flex pt-20 w-full h-[70vh] md:h-screen relative
+        <section id="hero" className="flex pt-20 w-full h-[70vh] md:h-screen relative
         bg-no-repeat bg-[bottom_center] md:bg-right-bottom bg-contain"
         style={{
             backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,0) 20%, rgba(255,255,255,1)), url('/images/personal-photo.png')"

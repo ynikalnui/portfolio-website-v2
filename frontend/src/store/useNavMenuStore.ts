@@ -1,13 +1,13 @@
-import { create } from 'zustand'
+import { create } from "zustand";
 
 type TNavMenuStore = {
-    isOpened: boolean; 
-    toggleMenu: () => void; 
-}
+  isOpened: boolean;
+  toggleMenu: () => void;
+};
 
 const useNavMenuStore = create<TNavMenuStore>((set) => ({
-    isOpened: false,
-    toggleMenu: () => set(state => ({ isOpened: !state.isOpened }))
+  isOpened: false,
+  toggleMenu: () => set((state) => ({ isOpened: !state.isOpened })),
 }));
 
 export default useNavMenuStore;

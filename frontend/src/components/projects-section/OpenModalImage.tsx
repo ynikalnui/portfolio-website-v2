@@ -1,25 +1,25 @@
-"use client";
+'use client'
 
-import useProjectModalStore from "@/store/useProjectModalStore";
-import Image from "next/image";
+import useProjectModalStore from '@/store/useProjectModalStore'
+import Image from 'next/image'
 
 type TOpenModalImageProps = {
-  imageSrc: string;
-  imageAlt: string;
-};
+  imageSrc: string
+  imageAlt: string
+}
 
 export default function OpenModalImage({
   imageSrc,
-  imageAlt,
+  imageAlt
 }: TOpenModalImageProps) {
   const toggleProjectModal = useProjectModalStore(
-    (state) => state.toggleProjectModal,
-  );
+    (state) => state.toggleProjectModal
+  )
 
   return (
     <div
-      data-aos="fade-in"
-      className="cursor-pointer relative group w-full"
+      data-aos='fade-in'
+      className='group relative w-full cursor-pointer'
       onClick={toggleProjectModal}
     >
       <Image
@@ -27,18 +27,14 @@ export default function OpenModalImage({
         alt={imageAlt}
         width={650}
         height={370}
-        className="w-full h-auto"
+        className='h-auto w-full'
       />
 
-      <div
-        className="hidden md:flex items-center justify-center
-            absolute inset-0 bg-black/60 backdrop-blur-md 
-            opacity-0 transition-opacity group-hover:opacity-100"
-      >
-        <p className="text-white section-text-base tracking-widest">
+      <div className='absolute inset-0 hidden items-center justify-center bg-black/60 opacity-0 backdrop-blur-md transition-opacity group-hover:opacity-100 md:flex'>
+        <p className='section-text-base tracking-widest text-white'>
           View More
         </p>
       </div>
     </div>
-  );
+  )
 }

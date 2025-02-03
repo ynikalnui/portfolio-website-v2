@@ -1,5 +1,5 @@
-import MobileNav from "./MobileNav";
-import ProjectModal from "./ProjectModal";
+import MobileNav from './MobileNav'
+import ProjectModal from './ProjectModal'
 
 export default function GlobalModals() {
   return (
@@ -7,5 +7,5 @@ export default function GlobalModals() {
       <MobileNav />
       <ProjectModal />
     </>
-  );
+  )
 }

@@ -1,55 +1,55 @@
 export default function SkillsSection() {
   const skillsData = [
     {
-      title: "Hard Skills",
+      title: 'Hard Skills',
       skills: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React",
-        "Node.js",
-        "Tailwind CSS",
-        "Git",
-        "Webpack",
-        "Next.js",
-        "TypeScript",
+        'HTML',
+        'CSS',
+        'JavaScript',
+        'React',
+        'Node.js',
+        'Tailwind CSS',
+        'Git',
+        'Webpack',
+        'Next.js',
+        'TypeScript'
       ],
-      aosEffect: "slide-right",
+      aosEffect: 'slide-right'
     },
     {
-      title: "Soft Skills",
+      title: 'Soft Skills',
       skills: [
-        "Kind",
-        "Empathy",
-        "Communication",
-        "Problem-Solving",
-        "Teamwork",
-        "Adaptability",
-        "Leadership",
-        "Creativity",
-        "Time Management",
-        "Conflict Resolution",
+        'Kind',
+        'Empathy',
+        'Communication',
+        'Problem-Solving',
+        'Teamwork',
+        'Adaptability',
+        'Leadership',
+        'Creativity',
+        'Time Management',
+        'Conflict Resolution'
       ],
-      aosEffect: "slide-left",
-    },
-  ];
+      aosEffect: 'slide-left'
+    }
+  ]
 
   return (
-    <section id="skills" className="section-container">
-      <h2 data-aos="fade-up" className="section-title">
+    <section id='skills' className='section-container'>
+      <h2 data-aos='fade-up' className='section-title'>
         Skills
       </h2>
 
-      <div className="flex flex-col gap-y-8">
+      <div className='flex flex-col gap-y-8'>
         {skillsData.map((section, index) => (
-          <div key={index} className="flex flex-col gap-y-4 overflow-hidden">
-            <h3 data-aos="fade-up" className="section-text-xl">
+          <div key={index} className='flex flex-col gap-y-4 overflow-hidden'>
+            <h3 data-aos='fade-up' className='section-text-xl'>
               {section.title}
             </h3>
 
-            <ul className="flex gap-x-4 gap-y-2 flex-wrap section-text-lg">
+            <ul className='section-text-lg flex flex-wrap gap-x-4 gap-y-2'>
               {section.skills.map((skill, idx) => (
-                <li data-aos="fade-in" data-aos-delay={idx * 200} key={idx}>
+                <li data-aos='fade-in' data-aos-delay={idx * 200} key={idx}>
                   {skill}
                 </li>
               ))}
@@ -57,12 +57,12 @@ export default function SkillsSection() {
 
             <div
               data-aos={section.aosEffect}
-              data-aos-duration="1000"
-              className="bg-black w-full h-[3px]"
+              data-aos-duration='1000'
+              className='h-[3px] w-full bg-black'
             />
           </div>
         ))}
       </div>
     </section>
-  );
+  )
 }

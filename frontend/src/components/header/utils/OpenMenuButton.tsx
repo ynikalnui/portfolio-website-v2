@@ -1,38 +1,38 @@
-"use client";
+'use client'
 
-import { AnimatePresence, motion } from "framer-motion";
-import BurgerIcon from "./BurgerIcon";
-import useNavMenuStore from "@/store/useNavMenuStore";
+import { AnimatePresence, motion } from 'framer-motion'
+import BurgerIcon from './BurgerIcon'
+import useNavMenuStore from '@/store/useNavMenuStore'
 
 export default function OpenMenuButton() {
-  const { isOpened, toggleMenu } = useNavMenuStore();
+  const { isOpened, toggleMenu } = useNavMenuStore()
 
   return (
     <button
-      className="flex md:hidden gap-x-2 font-semibold text-base tracking-wide items-center cursor-pointer"
+      className='flex cursor-pointer items-center gap-x-2 text-base font-semibold tracking-wide md:hidden'
       onClick={() => toggleMenu()}
     >
-      <span className="relative w-14 h-full flex items-center">
+      <span className='relative flex h-full w-14 items-center'>
         <AnimatePresence initial={false}>
           {isOpened ? (
             <motion.span
-              key="CLOSE"
+              key='CLOSE'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.2 }}
-              className="absolute text-white transition-all"
+              className='absolute text-white transition-all'
             >
               CLOSE
             </motion.span>
           ) : (
             <motion.span
-              key="MENU"
+              key='MENU'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.2 }}
-              className="absolute text-black transition-all"
+              className='absolute text-black transition-all'
             >
               MENU
             </motion.span>
@@ -42,5 +42,5 @@ export default function OpenMenuButton() {
 
       <BurgerIcon isOpened={isOpened} />
     </button>
-  );
+  )
 }

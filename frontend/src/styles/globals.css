@@ -1,34 +1,32 @@
-@import "./fonts.css";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   * {
-    @apply text-black font-montserrat;
+    @apply font-montserrat text-black;
   }
 }
 
 @layer components {
   .section-container {
-    @apply flex flex-col gap-y-6 w-full;
+    @apply flex w-full flex-col gap-y-6;
   }
 
   .section-title {
-    @apply text-center font-semibold text-4xl lg:text-6xl tracking-wide;
+    @apply text-center text-4xl font-semibold tracking-wide lg:text-6xl;
   }
 
   .section-text-xl {
-    @apply font-medium tracking-wide text-xl md:text-2xl lg:text-3xl;
+    @apply text-xl font-medium tracking-wide md:text-2xl lg:text-3xl;
   }
 
   .section-text-lg {
-    @apply font-normal text-base md:text-lg lg:text-xl;
+    @apply text-base font-normal md:text-lg lg:text-xl;
   }
 
   .section-text-base {
-    @apply font-normal text-sm md:text-base lg:text-lg;
+    @apply text-sm font-normal md:text-base lg:text-lg;
   }
 }
 

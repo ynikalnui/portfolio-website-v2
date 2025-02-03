@@ -1,64 +1,64 @@
-"use client";
+'use client'
 
-import useNavMenuStore from "@/store/useNavMenuStore";
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect } from "react";
-import { Link } from "react-scroll";
+import useNavMenuStore from '@/store/useNavMenuStore'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect } from 'react'
+import { Link } from 'react-scroll'
 
 export default function MobileNav() {
-  const { isOpened, toggleMenu } = useNavMenuStore();
+  const { isOpened, toggleMenu } = useNavMenuStore()
 
   const navItems = [
-    { link: "skills", title: "Skills" },
-    { link: "projects", title: "Projects" },
-    { link: "feedbacks", title: "Feedbacks" },
-    { link: "contact", title: "Contact" },
-  ];
+    { link: 'skills', title: 'Skills' },
+    { link: 'projects', title: 'Projects' },
+    { link: 'feedbacks', title: 'Feedbacks' },
+    { link: 'contact', title: 'Contact' }
+  ]
 
   useEffect(() => {
     if (isOpened) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = 'auto'
     }
 
     return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isOpened]);
+      document.body.style.overflow = 'auto'
+    }
+  }, [isOpened])
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        toggleMenu();
+      if (event.key === 'Escape') {
+        toggleMenu()
       }
-    };
+    }
 
     if (isOpened) {
-      document.addEventListener("keydown", handleKeyDown);
+      document.addEventListener('keydown', handleKeyDown)
     }
 
     return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isOpened, toggleMenu]);
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isOpened, toggleMenu])
 
   return (
     <AnimatePresence>
       {isOpened && (
         <motion.div
-          initial={{ y: "100%", opacity: 0 }}
+          initial={{ y: '100%', opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: "-100%", opacity: 0 }}
+          exit={{ y: '-100%', opacity: 0 }}
           transition={{ bounce: 0, duration: 0.3 }}
-          className="fixed flex items-center justify-center md:hidden z-40 inset-0 bg-black/90 backdrop-blur-xl"
+          className='fixed inset-0 z-40 flex items-center justify-center bg-black/90 backdrop-blur-xl md:hidden'
         >
           <nav>
-            <ul className="flex flex-col items-center gap-y-6">
+            <ul className='flex flex-col items-center gap-y-6'>
               {navItems.map((item, index) => (
                 <li
                   key={index}
-                  className="font-semibold text-4xl text-white cursor-pointer"
+                  className='cursor-pointer text-4xl font-semibold text-white'
                 >
                   <Link
                     to={item.link}
@@ -76,5 +76,5 @@ export default function MobileNav() {
         </motion.div>
       )}
     </AnimatePresence>
-  );
+  )
 }

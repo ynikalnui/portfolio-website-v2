@@ -1,8 +1,10 @@
-import { client } from "@/lib/apollo"
-import { GET_SKILLS_SECTION_DATA, TSkillsSectionResponse } from "./skills-section-query"
+import { client } from '@/lib/apollo'
+import { GET_SKILLS_SECTION_DATA, TSkillsSectionResponse } from './skills-section-query'
 
 export default async function SkillsSection() {
-  const { data } = await client.query<TSkillsSectionResponse>({ query: GET_SKILLS_SECTION_DATA })
+  const { data } = await client.query<TSkillsSectionResponse>({
+    query: GET_SKILLS_SECTION_DATA
+  })
 
   return (
     <section id='skills' className='section-container'>
@@ -25,11 +27,7 @@ export default async function SkillsSection() {
               ))}
             </ul>
 
-            <div
-              data-aos={index === 0 ? 'slide-right' : 'slide-left'}
-              data-aos-duration='1000'
-              className='h-[3px] w-full bg-black'
-            />
+            <div data-aos={index === 0 ? 'slide-right' : 'slide-left'} data-aos-duration='1000' className='h-[3px] w-full bg-black' />
           </div>
         ))}
       </div>

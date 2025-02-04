@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_items",
+  "info": {
+    "singularName": "project-item",
+    "pluralName": "project-items",
+    "displayName": "ProjectItem"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "dates": {
+      "type": "string"
+    },
+    "projectImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "projectShowcase": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "projectShortDescription": {
+      "type": "text"
+    },
+    "projectFullDescription": {
+      "type": "text"
+    },
+    "projectStack": {
+      "type": "component",
+      "repeatable": true,
+      "component": "repeatable-components.multiple-text"
+    },
+    "projectWebsite": {
+      "type": "string"
+    }
+  }
+}

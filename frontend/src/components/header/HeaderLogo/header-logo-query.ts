@@ -2,8 +2,8 @@ import { gql } from '@apollo/client'
 
 export type THeaderLogoResponse = {
   logo: {
-    fullName: string, 
-    initials: string, 
+    fullName: string
+    initials: string
     specialty: string
   }
 }

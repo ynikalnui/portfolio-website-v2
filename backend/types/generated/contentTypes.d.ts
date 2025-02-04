@@ -369,6 +369,43 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFeedbackItemFeedbackItem
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'feedback_items';
+  info: {
+    description: '';
+    displayName: 'FeedbackItem';
+    pluralName: 'feedback-items';
+    singularName: 'feedback-item';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    feedbackText: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::feedback-item.feedback-item'
+    > &
+      Schema.Attribute.Private;
+    projectName: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    qualities: Schema.Attribute.Component<
+      'repeatable-components.multiple-text',
+      true
+    >;
+    score: Schema.Attribute.Integer;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHeroSectionHeroSection extends Struct.SingleTypeSchema {
   collectionName: 'hero_sections';
   info: {
@@ -427,6 +464,49 @@ export interface ApiLogoLogo extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     specialty: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProjectItemProjectItem extends Struct.CollectionTypeSchema {
+  collectionName: 'project_items';
+  info: {
+    displayName: 'ProjectItem';
+    pluralName: 'project-items';
+    singularName: 'project-item';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dates: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project-item.project-item'
+    > &
+      Schema.Attribute.Private;
+    projectFullDescription: Schema.Attribute.Text;
+    projectImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    projectShortDescription: Schema.Attribute.Text;
+    projectShowcase: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    projectStack: Schema.Attribute.Component<
+      'repeatable-components.multiple-text',
+      true
+    >;
+    projectWebsite: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -974,8 +1054,10 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::feedback-item.feedback-item': ApiFeedbackItemFeedbackItem;
       'api::hero-section.hero-section': ApiHeroSectionHeroSection;
       'api::logo.logo': ApiLogoLogo;
+      'api::project-item.project-item': ApiProjectItemProjectItem;
       'api::skill-item.skill-item': ApiSkillItemSkillItem;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

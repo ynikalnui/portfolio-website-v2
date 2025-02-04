@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 type TSkillItem = {
-  skills: {content: string}[],
+  skills: { content: string }[]
   title: string
 }
 

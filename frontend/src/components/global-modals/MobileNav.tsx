@@ -56,17 +56,8 @@ export default function MobileNav() {
           <nav>
             <ul className='flex flex-col items-center gap-y-6'>
               {navItems.map((item, index) => (
-                <li
-                  key={index}
-                  className='cursor-pointer text-4xl font-semibold text-white'
-                >
-                  <Link
-                    to={item.link}
-                    smooth={true}
-                    duration={500}
-                    offset={-50}
-                    onClick={toggleMenu}
-                  >
+                <li key={index} className='cursor-pointer text-4xl font-semibold text-white'>
+                  <Link to={item.link} smooth={true} duration={500} offset={-50} onClick={toggleMenu}>
                     {item.title}
                   </Link>
                 </li>

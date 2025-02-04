@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feedback_items",
+  "info": {
+    "singularName": "feedback-item",
+    "pluralName": "feedback-items",
+    "displayName": "FeedbackItem",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "projectName": {
+      "type": "string"
+    },
+    "qualities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "repeatable-components.multiple-text"
+    },
+    "feedbackText": {
+      "type": "text"
+    },
+    "score": {
+      "type": "integer"
+    }
+  }
+}

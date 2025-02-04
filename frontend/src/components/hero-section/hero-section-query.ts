@@ -2,8 +2,8 @@ import { gql } from '@apollo/client'
 
 export type THeroSectionResponse = {
   heroSection: {
-    qualities: { content: string }[],
-    title: string,
+    qualities: { content: string }[]
+    title: string
     personalPhoto: { url: string }
   }
 }

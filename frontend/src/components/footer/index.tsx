@@ -2,7 +2,7 @@ import { SocialIcon } from 'react-social-icons'
 
 export default function Footer() {
   return (
-    <footer className='flex w-full flex-col items-center gap-y-4 border-t-2 border-black py-2'>
+    <footer className='flex w-full flex-col items-center gap-y-4 border-t-2 border-black py-4'>
       <ul className='flex gap-x-2'>
         <li>
           <SocialIcon

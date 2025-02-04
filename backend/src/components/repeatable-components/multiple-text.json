@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_repeatable_components_multiple_texts",
+  "info": {
+    "displayName": "MultipleText",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    }
+  }
+}

@@ -1,38 +1,8 @@
-export default function SkillsSection() {
-  const skillsData = [
-    {
-      title: 'Hard Skills',
-      skills: [
-        'HTML',
-        'CSS',
-        'JavaScript',
-        'React',
-        'Node.js',
-        'Tailwind CSS',
-        'Git',
-        'Webpack',
-        'Next.js',
-        'TypeScript'
-      ],
-      aosEffect: 'slide-right'
-    },
-    {
-      title: 'Soft Skills',
-      skills: [
-        'Kind',
-        'Empathy',
-        'Communication',
-        'Problem-Solving',
-        'Teamwork',
-        'Adaptability',
-        'Leadership',
-        'Creativity',
-        'Time Management',
-        'Conflict Resolution'
-      ],
-      aosEffect: 'slide-left'
-    }
-  ]
+import { client } from "@/lib/apollo"
+import { GET_SKILLS_SECTION_DATA, TSkillsSectionResponse } from "./skills-section-query"
+
+export default async function SkillsSection() {
+  const { data } = await client.query<TSkillsSectionResponse>({ query: GET_SKILLS_SECTION_DATA })
 
   return (
     <section id='skills' className='section-container'>
@@ -41,22 +11,22 @@ export default function SkillsSection() {
       </h2>
 
       <div className='flex flex-col gap-y-8'>
-        {skillsData.map((section, index) => (
+        {data.skillItems.map((item, index) => (
           <div key={index} className='flex flex-col gap-y-4 overflow-hidden'>
             <h3 data-aos='fade-up' className='section-text-xl'>
-              {section.title}
+              {item.title}
             </h3>
 
             <ul className='section-text-lg flex flex-wrap gap-x-4 gap-y-2'>
-              {section.skills.map((skill, idx) => (
+              {item.skills.map((skill, idx) => (
                 <li data-aos='fade-in' data-aos-delay={idx * 200} key={idx}>
-                  {skill}
+                  {skill.content}
                 </li>
               ))}
             </ul>
 
             <div
-              data-aos={section.aosEffect}
+              data-aos={index === 0 ? 'slide-right' : 'slide-left'}
               data-aos-duration='1000'
               className='h-[3px] w-full bg-black'
             />

@@ -5,6 +5,7 @@ import GlobalModals from '@/components/global-modals'
 import Footer from '@/components/footer'
 import localFont from 'next/font/local'
 import '../styles/globals.css'
+import { Providers } from '@/providers'
 
 const montserrat = localFont({
   src: [
@@ -49,11 +50,13 @@ export default function RootLayout({
     <html lang='en' className={montserrat.variable}>
       <AOSInit />
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
 
-        <GlobalModals />
+          <GlobalModals />
+        </Providers>
       </body>
     </html>
   )

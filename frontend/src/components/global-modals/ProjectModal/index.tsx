@@ -57,7 +57,7 @@ export default function ProjectModal() {
 
       <ul className='flex w-full flex-col gap-y-5'>
         {data?.projectItem.projectShowcase.map((e, index) => (
-          <li key={index} data-aos-delay='300' data-aos='fade-up'>
+          <li key={index}>
             <Image src={getStrapiUrl(e.url)} alt={e.alternativeText} width={980} height={510} className='w-full' />
           </li>
         ))}

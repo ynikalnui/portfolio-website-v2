@@ -21,43 +21,37 @@ export default function ContactSection() {
 
       <Form onSubmit={handleSubmit(onSubmit)} action={'/send-email'} className='flex w-full flex-col gap-y-4'>
         <div className='flex w-full gap-x-4'>
-          <label className='w-1/2' htmlFor='name'>
-            <input
-              type='text'
-              placeholder='Your name'
-              className='w-full border-b-2 border-black py-2 text-lg font-normal tracking-widest outline-none placeholder:text-center lg:text-xl'
-              {...register('name', { required: true })}
-              aria-required='true'
-            />
-          </label>
+          <input
+            type='text'
+            placeholder='Your name'
+            className='w-1/2 border-b-2 border-black py-2 text-lg font-normal tracking-widest outline-none placeholder:text-center lg:text-xl'
+            {...register('name', { required: true })}
+            aria-required='true'
+          />
 
-          <label className='w-1/2' htmlFor='email'>
-            <input
-              type='email'
-              placeholder='Your email'
-              className='w-full border-b-2 border-black py-2 text-lg font-normal tracking-widest outline-none placeholder:text-center lg:text-xl'
-              {...register('email', {
-                required: 'Email is required',
-                pattern: {
-                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  message: 'Enter a valid email address'
-                }
-              })}
-              aria-required='true'
-            />
-          </label>
+          <input
+            type='email'
+            placeholder='Your email'
+            className='w-1/2 border-b-2 border-black py-2 text-lg font-normal tracking-widest outline-none placeholder:text-center lg:text-xl'
+            {...register('email', {
+              required: 'Email is required',
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: 'Enter a valid email address'
+              }
+            })}
+            aria-required='true'
+          />
         </div>
 
         <div className='w-full'>
-          <label htmlFor='message'>
-            <textarea
-              rows={4}
-              placeholder='Your Message'
-              className='no-scrollbar w-full border-b-2 border-black py-4 text-lg font-normal tracking-widest outline-none placeholder:text-center lg:text-xl'
-              {...register('message', { required: true })}
-              aria-required='true'
-            />
-          </label>
+          <textarea
+            rows={4}
+            placeholder='Your Message'
+            className='no-scrollbar w-full border-b-2 border-black py-4 text-lg font-normal tracking-widest outline-none placeholder:text-center lg:text-xl'
+            {...register('message', { required: true })}
+            aria-required='true'
+          />
         </div>
 
         {/* Honeypot Field (Hidden from Users) */}

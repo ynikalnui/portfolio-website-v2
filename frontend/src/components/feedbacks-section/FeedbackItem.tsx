@@ -40,7 +40,12 @@ export default function FeedbackItem({ feedbackText, projectName, qualities, sco
             <ul className='flex gap-x-1'>
               {Array.from({ length: 5 }, (_, index) => (
                 <li key={index}>
-                  <Image src={index < score ? '/images/star-icon-yellow.svg' : '/images/star-icon-grey.svg'} alt='review star' width={25} height={25} />
+                  <Image
+                    src={index < score ? '/images/star-icon-yellow.svg' : '/images/star-icon-grey.svg'}
+                    alt='review star'
+                    width={25}
+                    height={25}
+                  />
                 </li>
               ))}
             </ul>
@@ -50,7 +55,10 @@ export default function FeedbackItem({ feedbackText, projectName, qualities, sco
         <div data-aos='slide-down' data-aos-duration='1000' className='w-[3px] grow bg-black' />
 
         <div className='flex w-9/12 grow items-center overflow-hidden'>
-          <p data-aos='slide-right' className='text-sm font-normal italic leading-6 md:text-base lg:text-xl lg:leading-8'>
+          <p
+            data-aos='slide-right'
+            className='text-sm font-normal italic leading-6 md:text-base lg:text-xl lg:leading-8'
+          >
             “{feedbackText}”
           </p>
         </div>

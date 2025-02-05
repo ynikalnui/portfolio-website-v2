@@ -17,7 +17,10 @@ export default function OpenMenuButton() {
   }, [isOpened])
 
   return (
-    <button className='flex cursor-pointer items-center gap-x-2 text-base font-semibold tracking-wide md:hidden' onClick={() => toggleMenu()}>
+    <button
+      className='flex cursor-pointer items-center gap-x-2 text-base font-semibold tracking-wide md:hidden'
+      onClick={() => toggleMenu()}
+    >
       {delayedIsOpened ? <span className='text-white'>CLOSE</span> : <span className='text-black'>MENU</span>}
 
       <BurgerIcon isOpened={isOpened} />

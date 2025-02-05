@@ -21,8 +21,14 @@ export default function HeaderLogo({ fullName, initials, specialty }: THeaderLog
       </div>
 
       <div>
-        <p className={`text-base font-bold transition-all ${isOpened ? 'text-white delay-200' : 'text-black'}`}>{fullName}</p>
-        <p className={`text-sm font-medium uppercase transition-all ${isOpened ? 'text-white delay-200' : 'text-black'}`}>{specialty}</p>
+        <p className={`text-base font-bold transition-all ${isOpened ? 'text-white delay-200' : 'text-black'}`}>
+          {fullName}
+        </p>
+        <p
+          className={`text-sm font-medium uppercase transition-all ${isOpened ? 'text-white delay-200' : 'text-black'}`}
+        >
+          {specialty}
+        </p>
       </div>
     </Link>
   )

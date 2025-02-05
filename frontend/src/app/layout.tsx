@@ -54,7 +54,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {children}
           <Footer />
 
-          <Toaster position='top-center'/>
+          <Toaster position='top-center' />
           <GlobalModals />
         </Providers>
       </body>

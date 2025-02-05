@@ -5,10 +5,7 @@ import Form from 'next/form'
 import { sendEmail, TFormData } from '@/utils/sendEmail'
 
 export default function ContactSection() {
-  const {
-    register,
-    handleSubmit
-  } = useForm<TFormData>()
+  const { register, handleSubmit } = useForm<TFormData>()
 
   const onSubmit = (data: TFormData) => {
     if (data.honeypot) return
@@ -26,7 +23,6 @@ export default function ContactSection() {
         <div className='flex w-full gap-x-4'>
           <label className='w-1/2' htmlFor='name'>
             <input
-              data-aos='fade-up'
               type='text'
               placeholder='Your name'
               className='w-full border-b-2 border-black py-2 text-lg font-normal tracking-widest outline-none placeholder:text-center lg:text-xl'
@@ -37,8 +33,6 @@ export default function ContactSection() {
 
           <label className='w-1/2' htmlFor='email'>
             <input
-              data-aos='fade-up'
-              data-aos-delay='200'
               type='email'
               placeholder='Your email'
               className='w-full border-b-2 border-black py-2 text-lg font-normal tracking-widest outline-none placeholder:text-center lg:text-xl'
@@ -46,8 +40,8 @@ export default function ContactSection() {
                 required: 'Email is required',
                 pattern: {
                   value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  message: 'Enter a valid email address',
-                },
+                  message: 'Enter a valid email address'
+                }
               })}
               aria-required='true'
             />
@@ -57,8 +51,6 @@ export default function ContactSection() {
         <div className='w-full'>
           <label htmlFor='message'>
             <textarea
-              data-aos='fade-up'
-              data-aos-delay='400'
               rows={4}
               placeholder='Your Message'
               className='no-scrollbar w-full border-b-2 border-black py-4 text-lg font-normal tracking-widest outline-none placeholder:text-center lg:text-xl'

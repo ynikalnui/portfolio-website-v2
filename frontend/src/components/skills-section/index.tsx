@@ -27,7 +27,11 @@ export default async function SkillsSection() {
               ))}
             </ul>
 
-            <div data-aos={index === 0 ? 'slide-right' : 'slide-left'} data-aos-duration='1000' className='h-[3px] w-full bg-black' />
+            <div
+              data-aos={index === 0 ? 'slide-right' : 'slide-left'}
+              data-aos-duration='1000'
+              className='h-[3px] w-full bg-black'
+            />
           </div>
         ))}
       </div>

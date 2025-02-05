@@ -1,6 +1,5 @@
 'use client'
 
-import { AnimatePresence, motion } from 'framer-motion'
 import useNavMenuStore from '@/store/useNavMenuStore'
 import BurgerIcon from './BurgerIcon'
 import { useEffect, useState } from 'react'
@@ -12,7 +11,7 @@ export default function OpenMenuButton() {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setDelayedIsOpened(isOpened)
-    }, 300)
+    }, 200)
 
     return () => clearTimeout(timeoutId)
   }, [isOpened])

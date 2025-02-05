@@ -2,7 +2,6 @@
 
 import useProjectModalStore from '@/store/useProjectModalStore'
 import { AnimatePresence, motion } from 'framer-motion'
-import Image from 'next/image'
 import { ReactNode, useEffect } from 'react'
 
 export default function ProjectModalLayout({ children }: { children: ReactNode }) {

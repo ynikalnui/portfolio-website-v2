@@ -6,6 +6,7 @@ import Footer from '@/components/footer'
 import localFont from 'next/font/local'
 import '../styles/globals.css'
 import { Providers } from '@/providers'
+import { Toaster } from 'react-hot-toast'
 
 const montserrat = localFont({
   src: [
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {children}
           <Footer />
 
+          <Toaster position='top-center'/>
           <GlobalModals />
         </Providers>
       </body>

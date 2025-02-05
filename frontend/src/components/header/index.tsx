@@ -1,9 +1,9 @@
 import DesktopNav from './DesktopNav'
-import OpenMenuButton from './OpenMenuButton'
 import HeaderLayout from './HeaderLayout'
-import HeaderLogo from './HeaderLogo'
-import { GET_HEADER_LOGO_DATA, THeaderLogoResponse } from './HeaderLogo/header-logo-query'
+import HeaderLogo from './header-logo'
+import { GET_HEADER_LOGO_DATA, THeaderLogoResponse } from './header-logo/header-logo-query'
 import { client } from '@/lib/apollo'
+import OpenMenuButton from './open-menu-button'
 
 export default async function Header() {
   const { data } = await client.query<THeaderLogoResponse>({

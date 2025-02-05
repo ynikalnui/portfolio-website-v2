@@ -33,7 +33,7 @@ export default function ProjectModal() {
         <div className='flex gap-x-4 overflow-hidden'>
           <div data-aos='slide-down' data-aos-delay='300' data-aos-duration='1000' className='w-[3px] grow bg-black' />
 
-          <ul data-aos='fade-in' data-aos-delay='300' className='section-text-lg flex flex-wrap gap-x-4 gap-y-2 uppercase'>
+          <ul data-aos='fade-in' data-aos-delay='300' className='section-text-lg flex flex-wrap justify-center gap-x-4 gap-y-2 uppercase'>
             {data?.projectItem.projectStack.map((e, index) => <li key={index}>{e.content}</li>)}
           </ul>
 

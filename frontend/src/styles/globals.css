@@ -6,7 +6,8 @@
   * {
     @apply font-montserrat text-black;
   }
-  input, textarea{
+  input,
+  textarea {
     -webkit-appearance: none;
     outline: none;
     -webkit-outline: none;

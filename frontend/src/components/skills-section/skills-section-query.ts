@@ -11,7 +11,7 @@ export type TSkillsSectionResponse = {
 
 export const GET_SKILLS_SECTION_DATA = gql`
   query GetSkillsSectionData($skillsPagination: PaginationArg) {
-    skillItems {
+    skillItems(sort: "title:asc") {
       skills(pagination: $skillsPagination) {
         content
       }

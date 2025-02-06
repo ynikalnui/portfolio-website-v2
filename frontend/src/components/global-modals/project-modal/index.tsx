@@ -7,6 +7,21 @@ import { useQuery } from '@apollo/client'
 import useProjectModalStore from '@/store/useProjectModalStore'
 import { getStrapiUrl } from '@/utils/getStrapiUrl'
 import Link from 'next/link'
+import ProjectFullDescription from './ProjectFullDesription'
+
+function parseProjectDescription(text: string) {
+  let formattedText = text.replace(/\*\*(.*?)\*\*/g, (match, p1) => {
+    return `<strong>${p1}</strong>`
+  })
+
+  formattedText = formattedText.replace(/\[(.*?)\]\((.*?)\)/g, (match, p1, p2) => {
+    return `<a href="${p2}" target="_blank" rel="noopener noreferrer">${p1}</a>`
+  })
+
+  formattedText = formattedText.replace(/\n\n/g, '<br /><br />')
+
+  return formattedText
+}
 
 export default function ProjectModal() {
   const toggleProjectModal = useProjectModalStore((state) => state.toggleProjectModal)
@@ -59,28 +74,32 @@ export default function ProjectModal() {
           />
         </div>
 
-        <p data-aos='fade-up' data-aos-delay='300' className='section-text-lg w-full text-start'>
-          {data?.projectItem.projectFullDescription}
-        </p>
+        <div data-aos='fade-up' data-aos-delay='300' className='section-text-lg w-full text-start flex flex-col gap-y-2'>
+          <ProjectFullDescription text={data?.projectItem.projectFullDescription || ''} />
+        </div>
       </div>
 
       <ul className='flex w-full flex-col gap-y-5'>
         {data?.projectItem.projectShowcase.map((e, index) => (
-          <li key={index} data-aos="fade-in">
+          <li key={index} data-aos='fade-in'>
             <Image src={getStrapiUrl(e.url)} alt={e.alternativeText} width={980} height={510} className='w-full' />
           </li>
         ))}
       </ul>
 
-      <div className='flex w-full justify-around gap-x-4'>
-        <Link
-          href={data?.projectItem.projectWebsite || '#'}
-          target='_blank'
-          className='section-text-lg w-1/2 border-2 border-transparent bg-black p-4 text-center text-white transition-colors hover:border-black hover:bg-transparent hover:text-black md:w-1/3'
-        >
-          WEBSITE
-        </Link>
-
+      <div className={`flex w-full gap-x-4 ${data?.projectItem.projectWebsite ? 'justify-around' : 'justify-center'}`}>
+        {
+          data?.projectItem.projectWebsite && (
+            <Link
+              href={data.projectItem.projectWebsite}
+              target='_blank'
+              className='section-text-lg w-1/2 border-2 border-transparent bg-black p-4 text-center text-white transition-colors hover:border-black hover:bg-transparent hover:text-black md:w-1/3'
+            >
+              WEBSITE
+            </Link>
+          )
+        }
+        
         <button
           className='section-text-lg w-1/2 border-2 border-black text-black transition-colors hover:border-transparent hover:bg-black hover:text-white md:w-1/3'
           onClick={toggleProjectModal}

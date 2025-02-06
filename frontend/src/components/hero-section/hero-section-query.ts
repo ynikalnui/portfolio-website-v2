@@ -4,7 +4,7 @@ export type THeroSectionResponse = {
   heroSection: {
     qualities: { content: string }[]
     title: string
-    personalPhoto: { url: string, alternativeText: string }
+    personalPhoto: { url: string; alternativeText: string }
   }
 }
 

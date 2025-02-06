@@ -6,7 +6,7 @@ export default async function SkillsSection() {
     query: GET_SKILLS_SECTION_DATA,
     variables: {
       skillsPagination: { limit: 50 }
-    },
+    }
   })
 
   return (

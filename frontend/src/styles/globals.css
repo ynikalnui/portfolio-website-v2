@@ -6,11 +6,11 @@
   * {
     @apply font-montserrat text-black;
   }
-  input,
-  textarea {
+  input, textarea {
     -webkit-appearance: none;
+    appearance: none;
     outline: none;
-    -webkit-outline: none;
+    border-radius: 0;
   }
 }
 

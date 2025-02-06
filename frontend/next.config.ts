@@ -18,9 +18,9 @@ const nextConfig: NextConfig = {
         search: ''
       },
       {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '1037',
+        protocol: 'https',
+        hostname: 'oleh-strapi.dieselservice.com.ua',
+        port: '',
         pathname: '/**',
         search: ''
       }

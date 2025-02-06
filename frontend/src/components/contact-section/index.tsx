@@ -24,7 +24,7 @@ export default function ContactSection() {
           <input
             type='text'
             placeholder='Your name'
-            className='w-1/2 border-b-2 border-black py-2 text-lg font-normal tracking-widest outline-none placeholder:text-center lg:text-xl'
+            className='w-1/2 border-b-2 border-black py-2 text-lg font-normal tracking-widest placeholder:text-center lg:text-xl'
             {...register('name', { required: true })}
             aria-required='true'
           />
@@ -32,7 +32,7 @@ export default function ContactSection() {
           <input
             type='email'
             placeholder='Your email'
-            className='w-1/2 border-b-2 border-black py-2 text-lg font-normal tracking-widest outline-none placeholder:text-center lg:text-xl'
+            className='w-1/2 border-b-2 border-black py-2 text-lg font-normal tracking-widest placeholder:text-center lg:text-xl'
             {...register('email', {
               required: 'Email is required',
               pattern: {
@@ -48,7 +48,7 @@ export default function ContactSection() {
           <textarea
             rows={4}
             placeholder='Your Message'
-            className='no-scrollbar w-full border-b-2 border-black py-4 text-lg font-normal tracking-widest outline-none placeholder:text-center lg:text-xl'
+            className='no-scrollbar w-full border-b-2 border-black py-4 text-lg font-normal tracking-widest placeholder:text-center lg:text-xl'
             {...register('message', { required: true })}
             aria-required='true'
           />

@@ -6,6 +6,11 @@
   * {
     @apply font-montserrat text-black;
   }
+  input{
+    -webkit-appearance: none;
+    outline: none;
+    -webkit-outline: none;
+  }
 }
 
 @layer components {

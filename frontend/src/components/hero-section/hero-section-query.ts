@@ -4,7 +4,7 @@ export type THeroSectionResponse = {
   heroSection: {
     qualities: { content: string }[]
     title: string
-    personalPhoto: { url: string }
+    personalPhoto: { url: string, alternativeText: string }
   }
 }
 
@@ -17,6 +17,7 @@ export const GET_HERO_SECTION_DATA = gql`
       title
       personalPhoto {
         url
+        alternativeText
       }
     }
   }

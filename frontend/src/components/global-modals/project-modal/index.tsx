@@ -101,7 +101,7 @@ export default function ProjectModal() {
         }
         
         <button
-          className='section-text-lg w-1/2 border-2 border-black text-black transition-colors hover:border-transparent hover:bg-black hover:text-white md:w-1/3'
+          className='section-text-lg w-1/2 border-2 p-4 border-black text-black transition-colors hover:border-transparent hover:bg-black hover:text-white md:w-1/3'
           onClick={toggleProjectModal}
         >
           BACK

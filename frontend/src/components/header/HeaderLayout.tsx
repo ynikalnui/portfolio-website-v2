@@ -23,12 +23,13 @@ export default function HeaderLayout({ children }: { children: ReactNode }) {
 
   return (
     <div
-      className={`fixed left-0 right-0 top-0 z-50 mx-auto flex w-full justify-between border-b-2 p-4 transition-all duration-200 
-        ${isOpened 
-          ? 'border-transparent bg-transparent delay-200' 
-          : scrollY > 20 
-            ? 'border-black bg-white/60 backdrop-blur-sm' 
-            : 'border-transparent'}`}
+      className={`fixed left-0 right-0 top-0 z-50 mx-auto flex w-full justify-between border-b-2 p-4 transition-all duration-200 ${
+        isOpened
+          ? 'border-transparent bg-transparent delay-200'
+          : scrollY > 20
+            ? 'border-black bg-white/60 backdrop-blur-sm'
+            : 'border-transparent'
+      }`}
     >
       {children}
     </div>

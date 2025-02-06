@@ -8,8 +8,7 @@ export const AOSInit = () => {
   useEffect(() => {
     AOS.init({
       offset: 0,
-      once: true,
-      disable: "mobile"
+      once: true
     })
   }, [])
 

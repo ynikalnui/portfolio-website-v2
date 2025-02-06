@@ -1,7 +1,6 @@
 'use client'
 
 import { useForm } from 'react-hook-form'
-import Form from 'next/form'
 import { sendEmail, TFormData } from '@/utils/sendEmail'
 
 export default function ContactSection() {
@@ -19,7 +18,7 @@ export default function ContactSection() {
         Contact
       </h2>
 
-      <Form onSubmit={handleSubmit(onSubmit)} action={'/api/email'} className='flex w-full flex-col gap-y-4'>
+      <form onSubmit={handleSubmit(onSubmit)} className='flex w-full flex-col gap-y-4'>
         <div className='flex w-full gap-x-4'>
           <input
             type='text'
@@ -69,7 +68,7 @@ export default function ContactSection() {
         >
           Send Message
         </button>
-      </Form>
+      </form>
     </section>
   )
 }

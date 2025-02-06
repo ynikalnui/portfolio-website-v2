@@ -20,7 +20,7 @@ export default function FeedbackItem({ feedbackText, projectName, qualities, sco
       <div data-aos='slide-right' data-aos-duration='1000' className='h-[3px] w-full bg-black' />
 
       <div className='flex gap-x-2 overflow-hidden'>
-        <div className='flex w-3/12 grow flex-col justify-between gap-y-6'>
+        <div className='flex w-4/12 md:w-3/12 grow flex-col justify-between gap-y-6'>
           <h4 data-aos='fade-right' className='text-base font-medium md:text-lg lg:text-xl'>
             {projectName}
           </h4>
@@ -54,7 +54,7 @@ export default function FeedbackItem({ feedbackText, projectName, qualities, sco
 
         <div data-aos='slide-down' data-aos-duration='1000' className='w-[3px] grow bg-black' />
 
-        <div className='flex w-9/12 grow items-center overflow-hidden'>
+        <div className='flex w-8/12 md:w-9/12 grow items-center overflow-hidden'>
           <p
             data-aos='slide-right'
             className='text-sm font-normal italic leading-6 md:text-base lg:text-xl lg:leading-8'

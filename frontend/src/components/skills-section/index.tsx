@@ -24,7 +24,7 @@ export default async function SkillsSection() {
 
             <ul className='section-text-lg flex flex-wrap gap-x-4 gap-y-2'>
               {item.skills.map((skill, idx) => (
-                <li data-aos='fade-in' data-aos-delay={idx * 100} key={idx}>
+                <li data-aos='fade-in' data-aos-delay={idx * 100} data-aos-disabled="mobile" key={idx}>
                   {skill.content}
                 </li>
               ))}

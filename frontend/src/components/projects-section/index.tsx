@@ -8,6 +8,15 @@ export default async function ProjectsSection() {
     query: GET_PROJECTS_SECTION_DATA
   })
 
+  const parseStartDate = (dateRange: string) => {
+    const startDateStr = dateRange.split(' - ')[1] 
+    return new Date(startDateStr + ' 1') 
+  }
+
+  const sortedProjects = [...data.projectItems].sort((a, b) => {
+    return parseStartDate(b.dates).getTime() - parseStartDate(a.dates).getTime()
+  })
+
   return (
     <section id='projects' className='section-container'>
       <h2 data-aos='fade-up' className='section-title'>
@@ -15,7 +24,7 @@ export default async function ProjectsSection() {
       </h2>
 
       <div className='flex flex-wrap justify-between gap-y-8'>
-        {data.projectItems.map((project, index) => (
+        {sortedProjects.map((project, index) => (
           <div key={index} className='w-full overflow-hidden md:flex md:gap-x-8'>
             <div className='flex w-full flex-col items-center gap-y-4 md:w-7/12'>
               <h3 data-aos='fade-down' className='text-2xl font-normal tracking-widest lg:text-3xl'>

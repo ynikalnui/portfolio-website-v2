@@ -17,7 +17,7 @@ export default function ProjectDescription({ text }: { text: string }) {
               
               const link = part.match(/\[(.*?)\]\((.*?)\)/)
               if (link) {
-                const [_, text, url] = link
+                const [_, text, url] = link // eslint-disable-line @typescript-eslint/no-unused-vars
                 return (
                   <Link 
                     key={i}

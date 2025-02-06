@@ -9,20 +9,6 @@ import { getStrapiUrl } from '@/utils/getStrapiUrl'
 import Link from 'next/link'
 import ProjectFullDescription from './ProjectFullDesription'
 
-function parseProjectDescription(text: string) {
-  let formattedText = text.replace(/\*\*(.*?)\*\*/g, (match, p1) => {
-    return `<strong>${p1}</strong>`
-  })
-
-  formattedText = formattedText.replace(/\[(.*?)\]\((.*?)\)/g, (match, p1, p2) => {
-    return `<a href="${p2}" target="_blank" rel="noopener noreferrer">${p1}</a>`
-  })
-
-  formattedText = formattedText.replace(/\n\n/g, '<br /><br />')
-
-  return formattedText
-}
-
 export default function ProjectModal() {
   const toggleProjectModal = useProjectModalStore((state) => state.toggleProjectModal)
 

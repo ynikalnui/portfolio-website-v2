@@ -19,7 +19,7 @@ export default function ContactSection() {
         Contact
       </h2>
 
-      <Form onSubmit={handleSubmit(onSubmit)} action={'/send-email'} className='flex w-full flex-col gap-y-4'>
+      <Form onSubmit={handleSubmit(onSubmit)} action={'/api/email'} className='flex w-full flex-col gap-y-4'>
         <div className='flex w-full gap-x-4'>
           <input
             type='text'

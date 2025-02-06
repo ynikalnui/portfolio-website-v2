@@ -18,7 +18,7 @@ export const sendEmail = async (data: TFormData) => {
         'Content-Type': 'application/json'
       }
     })
-    console.log(response)
+
     toast.success(response.data.message, { id: 'send-mail' })
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {

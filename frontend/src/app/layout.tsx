@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/hero-image.png',
+        url: 'https://oleh.dieselservice.com.ua/hero-image.png',
         width: 1200,
         height: 630,
         alt: 'Oleh Skakun Portfolio Preview'
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     creator: '@ovskakun',
     title: 'Oleh Skakun | Front-End Developer Portfolio',
     description: 'Explore the portfolio of Oleh Skakun, a skilled Front-End Developer',
-    images: ['/hero-image.png']
+    images: ['https://oleh.dieselservice.com.ua/hero-image.png']
   },
   icons: {
     icon: '/favicon.ico'

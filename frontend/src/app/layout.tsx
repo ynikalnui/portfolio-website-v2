@@ -42,7 +42,8 @@ const montserrat = localFont({
 export const metadata: Metadata = {
   title: 'Oleh Skakun | Front-End Developer Portfolio',
   description: 'Explore the portfolio of Oleh Skakun, a skilled Front-End Developer',
-  keywords: 'Front-End Developer, Frontend, JavaScript, TypeScript, React.js, Next.js, Vue.js, UI/UX, Web Development, Oleh Skakun',
+  keywords:
+    'Front-End Developer, Frontend, JavaScript, TypeScript, React.js, Next.js, Vue.js, UI/UX, Web Development, Oleh Skakun',
   authors: [{ name: 'Oleh Skakun', url: 'https://oleh.dieselservice.com.ua' }],
   creator: 'Oleh Skakun',
   publisher: 'Oleh Skakun',
@@ -74,10 +75,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico'
   },
-  manifest: '/site.webmanifest',
-  themeColor: '#ffffff',
-  colorScheme: 'light',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover'
+  manifest: '/site.webmanifest'
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

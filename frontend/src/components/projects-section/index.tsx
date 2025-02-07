@@ -9,8 +9,8 @@ export default async function ProjectsSection() {
   })
 
   const parseStartDate = (dateRange: string) => {
-    const startDateStr = dateRange.split(' - ')[1] 
-    return new Date(startDateStr + ' 1') 
+    const startDateStr = dateRange.split(' - ')[1]
+    return new Date(startDateStr + ' 1')
   }
 
   const sortedProjects = [...data.projectItems].sort((a, b) => {

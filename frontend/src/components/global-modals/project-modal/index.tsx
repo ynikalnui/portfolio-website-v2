@@ -79,6 +79,7 @@ export default function ProjectModal() {
             <Link
               href={data.projectItem.projectWebsite}
               target='_blank'
+              rel='noopener noreferrer'
               className='section-text-lg w-1/2 border-2 border-transparent bg-black p-4 text-center text-white transition-colors hover:border-black hover:bg-transparent hover:text-black md:w-1/3'
             >
               WEBSITE
